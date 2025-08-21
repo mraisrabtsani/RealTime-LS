@@ -4,22 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jam Real-time</title>
+  <!-- Link ke Google Fonts Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 10px; /* Sedikit padding agar tidak terlalu mepet */
+      padding: 10px;
       display: flex;
-      justify-content: flex-start; /* Posisi jam di kiri */
-      align-items: flex-start; /* Posisi atas */
+      justify-content: flex-start;
+      align-items: flex-start;
       height: 100vh;
       background-color: #f8f9fa;
-      overflow: hidden; /* Hilangkan scroll */
+      overflow: hidden;
     }
     #clock {
-      font-family: Arial, sans-serif;
-      font-size: 26px; /* Ukuran font 20px */
+      font-family: 'Tahoma', sans-serif; /* Font unik */
+      font-size: 24px; /* Ukuran font */
       font-weight: bold;
-      color: #333;
+      color: #2c3e50; /* Warna teks */
+      letter-spacing: 2px; /* Spasi antar huruf */
     }
   </style>
 </head>
@@ -29,7 +32,7 @@
   <script>
     function updateClock() {
       const now = new Date();
-      const time = now.toLocaleTimeString('id-ID', { hour12: false });
+      const time = now.toLocaleTimeString('en-US', { hour12: true });
       document.getElementById('clock').innerText = time;
     }
     setInterval(updateClock, 1000);
@@ -37,4 +40,3 @@
   </script>
 </body>
 </html>
-
