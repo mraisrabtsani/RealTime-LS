@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jam Real-time</title>
-  <!-- Link ke Google Fonts Orbitron -->
+  <!-- Google Font Orbitron -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
@@ -18,21 +18,35 @@
       overflow: hidden;
     }
     #clock {
-      font-family: 'Tahoma', sans-serif; /* Font unik */
-      font-size: 24px; /* Ukuran font */
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
       font-weight: bold;
-      color: #2c3e50; /* Warna teks */
-      letter-spacing: 2px; /* Spasi antar huruf */
+      color: #2c3e50;
+      letter-spacing: 2px;
+    }
+    .label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 10px;
+      color: #ff5733; /* Warna oranye untuk label */
+    }
+    .container {
+      display: flex;
+      align-items: center;
     }
   </style>
 </head>
 <body>
-  <div id="clock"></div>
+  <div class="container">
+    <div class="label">Time :</div>
+    <div id="clock"></div>
+  </div>
 
   <script>
     function updateClock() {
       const now = new Date();
-      const time = now.toLocaleTimeString('en-US', { hour12: true });
+      const time = now.toLocaleTimeString('en-US', { hour12: true }); // Format dengan AM/PM
       document.getElementById('clock').innerText = time;
     }
     setInterval(updateClock, 1000);
