@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jam Real-time</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            font-size: 48px;
-            font-weight: bold;
-            background-color: #f8f9fa;
-            color: #333;
-            margin-top: 100px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jam Real-time</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Posisi di paling atas */
+      height: 100vh;
+      background-color: #f8f9fa;
+      overflow: hidden; /* Hilangkan scroll */
+    }
+    #clock {
+      font-family: Arial, sans-serif;
+      font-size: 48px;
+      font-weight: bold;
+      color: #333;
+      margin-top: 20px; /* Sedikit jarak dari atas */
+    }
+  </style>
 </head>
-
 <body>
-    <div id="clock"></div>
+  <div id="clock"></div>
 
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const time = now.toLocaleTimeString('id-ID', {
-                hour12: false
-            });
-            document.getElementById('clock').innerText = time;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('id-ID', { hour12: false });
+      document.getElementById('clock').innerText = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
-
 </html>
